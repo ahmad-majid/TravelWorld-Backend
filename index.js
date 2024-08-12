@@ -9,7 +9,7 @@ import user_Route from "./Routes/User.js";
 import auth_Route from "./Routes/auth.js";
 import review_Route from "./Routes/reviews.js";
 import booking_Route from "./Routes/booking.js";
-
+import subscriber_Route from "./Routes/subscriptionRoutes.js";
 dotenv.config();
 const app = express();
 const port = process.env.PORT || 8000;
@@ -47,6 +47,7 @@ app.use("/api/v1/users", user_Route);
 app.use("/api/v1/auth", auth_Route);
 app.use("/api/v1/review", review_Route);
 app.use("/api/v1/booking", booking_Route);
+app.use("/api/v1/subscribe", subscriber_Route);
 
 app.listen(port, () => {
   connect();

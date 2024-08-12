@@ -2,9 +2,8 @@ import User from "../models/User.js";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 
-//user registration
 export const register = async (req, res) => {
-  //hashing passwordd
+
   const salt = bcrypt.genSaltSync(10);
   const hash = bcrypt.hashSync(req.body.password, salt);
   try {
@@ -21,7 +20,6 @@ export const register = async (req, res) => {
   }
 };
 
-//user login
 export const login = async (req, res) => {
   const email = req.body.email;
   try {
